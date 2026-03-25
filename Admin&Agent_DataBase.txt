@@ -1,0 +1,1861 @@
+{
+   "name": "BigYe", 
+   "email": "bigye20@email.com",
+   "password": "password127"
+}
+
+
+{
+  "id": 6,
+  "title": "Luxury 4 Bedroom Duplex",
+  "description": "Located in Lekki Phase 1",
+  "price": "280000000.00",
+  "location": "Lagos",
+  "property_type": "House",
+  "listing_type": "Sale",
+  "bedrooms": 4,
+  "bathrooms": 5,
+  "area_sqft": 3500,
+  "image_url": "https://example.com/image.jpg",
+  "is_verified": false,
+  "created_at": "2026-03-02T10:58:36.922Z",
+  "user_id": null
+}
+
+
+{
+  "title": "Luxury 4 Bedroom Duplex",
+  "description": "Located in Adeola Odeku, Victoria Island",
+  "price": 440000000,
+  "location": "Lagos",
+  "property_type": "House",
+  "listing_type": "Sale",
+  "bedrooms": 4,
+  "bathrooms": 5,
+  "area_sqft": 35700,
+  "image_url": "https://example.com/image.jpg"
+}
+
+property id "36", "37", "38", "39", "40" belong to agent BigYe(Agent id "10")
+
+
+
+
+
+
+
+
+ADMIN
+
+{
+   "name": "Shabi", 
+   "email": "shabi27@email.com",
+   "password": "password123"
+}
+
+
+
+{
+   "name": "Jide", 
+   "email": "bigye@email.com",
+   "password": "password124"
+}
+
+
+
+{
+  "name": "Mr Gentle",
+  "email": "gentleman01@email.com",
+  "password": "password123"
+}
+
+(property: 46,47,48, agent id: 12)
+
+{
+  "title": "Luxury 2 Bedroom Shortlet",
+  "description": "Located in Lekki Phase 1",
+  "price": 68000,
+  "location": "Lagos",
+  "property_type": "Shortlet",
+  "listing_type": "Rent",
+  "bedrooms": 2,
+  "bathrooms": 3,
+  "area_sqft": 1800,
+  "image_url": "https://example.com/image.jpg"
+}
+
+
+
+
+{
+  "property_id":31
+}
+
+
+
+http://localhost:5000/api/admin/reports
+http://localhost:5000/api/agents/7
+http://localhost:5000/api/properties/37/feature
+http://localhost:5000/api/properties/feature/2/pay
+http://localhost:5000/api/properties/42/book
+
+
+
+
+
+
+{
+   "name": "Abiola Daniel", 
+   "email": "dada@email.com",
+   "password": "password127"
+}
+
+
+
+
+
+UPDATED PROFILE
+http://localhost:5000/api/users/profile
+{
+  "name": "Abiola Daniel",
+  "phone": "08079962479",
+  "bio": "Real estate agent in Abuja",
+  "profile_picture": "https://image-url.com/profile.jpg"
+}
+
+
+
+EXAMPLE FOR SAVED PROPERTY
+{
+  "location": "Abuja",
+  "property_type": "Apartment",
+  "listing_type": "Rent",
+  "min_price": 500000,
+  "max_price": 4000000,
+  "bedrooms": 2
+}
+
+
+
+
+HOTEL ROOMS BOOKING
+http://localhost:5000/api/properties/39/rooms   (to create booking)
+{
+  "room_type": "delux",
+  "price_per_night": "56000",
+  "total_rooms": 2
+}
+
+
+http://localhost:5000/api/properties/rooms/2/book     (to book a room)
+{
+ "check_in": "2026-03-24",
+ "check_out": "2026-03-27",
+"rooms_booked": 2
+}
+
+http://localhost:5000/api/properties/rooms/bookings/14/pay
+FOR HOTEL ROOM PAYMENT
+
+
+
+
+http://localhost:5000/api/properties/42/book
+SHORTLET BOOKING
+{
+ "check_in": "2026-04-08",
+ "check_out": "2026-04-12"
+}
+
+
+
+{
+  "message": "Booking created",
+  "booking": {
+    "id": 4,
+    "property_id": 44,
+    "user_id": 12,
+    "check_in": "2026-03-23T23:00:00.000Z",
+    "check_out": "2026-03-26T23:00:00.000Z",
+    "total_price": "264000",
+    "status": "pending",
+    "created_at": "2026-03-18T18:10:13.205Z"
+  }
+}
+
+
+
+LAND VERIFICATION
+http://localhost:5000/api/properties/39/verify-land
+
+{
+"document_url": "https://doc-link.com/file.pdf",
+"document_type": "C of O",
+"document_number": "ABC123456"
+}
+
+http://localhost:5000/api/properties/land/1/review
+{
+  "status": "verified",
+  "admin_note": "Valid government record"
+}
+
+
+
+
+
+
+
+POST:  api/messages/send
+GET:   api/messages/conversation/id
+GET:   api/messages/my-messages
+EXAMPLE FOR MESSAGES
+{
+ "receiver_id": 7,
+ "property_id": 37,
+ "message": "Hello, good afternoon. I'll be coming tomorrow by 4pm, to come and collect my key"
+}
+
+
+{
+"rating":5,
+"comment": "Great location and good price"
+}
+
+
+
+MESSAGE RESPONSE
+{
+  "id": 1,
+  "sender_id": 10,
+  "receiver_id": 3,
+  "property_id": 31,
+  "message": "Hello, is this property still available?",
+  "created_at": "2026-03-11T20:08:40.018Z"
+}
+
+
+
+
+
+
+{
+  "id": 5,
+  "title": "Luxury 4 Bedroom Duplex",
+  "description": "Located in Lekki Phase 1",
+  "price": "270000000.00",
+  "location": "Lagos",
+  "property_type": "House",
+  "listing_type": "Sale",
+  "bedrooms": 4,
+  "bathrooms": 5,
+  "area_sqft": 3500,
+  "image_url": "https://example.com/image.jpg",
+  "is_verified": false,
+  "created_at": "2026-03-02T10:52:57.894Z",
+  "user_id": null
+}
+
+property id ""  "16", "17" belong to agent Dada(Agent id "7")
+
+
+
+
+
+
+
+{
+  "title": "Luxury 4 Bedroom Duplex",
+  "description": "Located in Lekki Phase 1",
+  "price": 250000000,
+  "location": "Lagos",
+  "property_type": "House",
+  "listing_type": "Sale",
+  "bedrooms": 4,
+  "bathrooms": 5,
+  "area_sqft": 3500,
+  "image_url": "https://example.com/image.jpg"
+}
+
+
+
+
+{
+  "title": "A Smart 2 Bedroom Apartment",
+  "description": "Located in Lekki Phase 1",
+  "price": 5000000,
+  "location": "Lagos",
+  "property_type": "Apartment",
+  "listing_type": "Rent",
+  "bedrooms": 2,
+  "bathrooms": 3,
+  "area_sqft": 2700,
+  "image_url": "https://example.com/image.jpg"
+}
+
+
+
+
+
+
+SQL QUERY
+
+SELECT id, name, email, role FROM users;
+
+SELECT id, name, email, role FROM users ORDER BY id;
+
+SELECT id, name, email FROM users WHERE role = 'agent';    (SEE only agents)
+
+SELECT name, email FROM users WHERE id = 3;   (Find a specific user)
+
+SELECT users.id, users.name, users.email FROM users JOIN properties ON users.id = properties.user_id;  (See which Agents posted properties)
+
+
+SELECT column_name 
+FROM information_schema.columns
+WHERE table_name = 'properties';    (Check all columns inside properties Table)
+
+
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'property_image';
+
+
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'reports';
+
+
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public';   (to see all tables in public)
+
+
+
+SELECT verification_status
+FROM properties;    (check values inside verification_status)
+
+
+SELECT users.id, users.name, users.email, COUNT(properties.id) AS total_properties
+FROM users
+LEFT JOIN properties ON users.id = properties.user_id
+GROUP BY users.id;       (List agents+Number of properties they posted)
+
+
+
+SELECT verification_status, COUNT(*)
+FROM properties
+GROUP BY verification_status;       (Check values inside verification_status with results well arranged)
+
+
+
+SELECT users.name, properties.title, properties.verification_status
+FROM properties
+JOIN users ON properties.user_id = users.id;    (FOR ADMIN: Show agent name + property title + status)
+
+
+
+
+
+SELECT 
+users.id,
+users.name,
+users.email,
+COUNT(properties.id) AS total_properties
+FROM users
+LEFT JOIN properties
+ON users.id = properties.user_id
+WHERE users.role = 'agent'
+GROUP BY users.id, users.name, users.email
+ORDER BY total_properties DESC;             (SEE Agents & Number of properties they posted by ORDER)
+
+
+
+
+
+TO SEND RESULTS AND ID THROUGH TERMINAL
+ //console.log(typeof existingProperty.user_id);
+        //console.log(typeof req.user.id);
+        //console.log(existingProperty.user_id, req.user.id);
+
+        //console.log("Token user ID:", req.user.id);
+        //console.log("Property owner ID:", existingProperty.user_id);
+        //console.log("User role:", req.user.role);
+
+
+
+
+
+
+
+FIREBASE CONFIG
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAjZf5bmbZgxaeCR8y8O6c0FKqeYqZG3i0",
+  authDomain: "naheem-2000.firebaseapp.com",
+  projectId: "naheem-2000",
+  storageBucket: "naheem-2000.firebasestorage.app",
+  messagingSenderId: "325103138130",
+  appId: "1:325103138130:web:7e3c5c368356baa321768b",
+  measurementId: "G-3HGGM26KP8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+FIREBASE WEB APP PRIVATE KEY
+ENRVA8LTBMmJKNXf43CP6FoRMK9fW7MbaatFIE7l0CU
+
+(BCYK37CPpHqm1wmgUemyxDFyaGH-o1vH2akJqXaxiH_NOjZq9T4kgAIg-6BRi-1lzo7KWU00W32Bvd-N-SIaWcU)
+
+
+
+
+
+
+
+
+
+
+
+
+
+MY favoriteController
+const pool = require("../config/db");
+
+//Add property to favorite
+exports.addFavorite = async (req, res) => {
+    try {
+
+        const userId = req.user.id;
+        const { property_id } = req.body;
+
+        const result = await pool.query(
+            "INSERT INTO favorites (user_id, property_id) VALUES ($1,$2) RETURNING*",
+            [userId, property_id]
+        );
+
+        res.json(result.rows[0]);
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+
+//Get all favorite for a user
+exports.getFavorites = async (req, res) => {
+    try {
+
+        const userId = req.user.id;
+
+        const result = await pool.query(
+            `SELECT properties.*
+            FROM favorites
+            JOIN properties
+            ON favorites.property_id = properties.id
+            WHERE favorites.user_id = $1`,
+            [userId]
+        );
+
+        res.json(result.rows);
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+
+//Remove favorite
+exports.removeFavorite = async (req, res) => {
+
+    try {
+
+        const userId = req.user.id;
+        const { property_id } = req.params;
+
+        await pool.query(
+            "DELETE FROM favorites WHERE user_id=$1 AND property_id=$2",
+            [userId, property_id]
+        );
+
+        res.json({ message: "Removed from favorites" });
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+
+
+
+
+MY favorites.js
+const router = require("express").Router();
+
+const favoriteController = require("../controllers/favoriteController");
+const authMiddleware = require("../middleware/authMiddleware");
+
+router.post("/", authMiddleware, favoriteController.addFavorite);
+router.get("/", authMiddleware, favoriteController.getFavorites);
+router.delete("/:property_id", authMiddleware, favoriteController.removeFavorite);
+
+module.exports = router;
+
+
+
+
+MY server.js
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+require("./config/db");
+
+const propertyRoutes = require("./routes/propertyRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+
+const authRoutes = require('./routes/authRoutes');
+
+
+const app = express();
+const PORT = 5000;
+
+//Middlewares
+app.use(cors());
+app.use(express.json());
+
+//Routes
+app.use("/api/properties", propertyRoutes);
+
+app.use("/api/admin", adminRoutes);
+
+app.use('/api/auth', authRoutes);
+
+app.use("/favorites", require("./routes/favorites"));
+
+app.get("/", (req, res) => {
+    res.send("Africa PropTech API is running");
+});
+
+
+
+//Start server
+app.listen(PORT, () => {
+    console.log(`The Server is running on port ${PORT}`);
+});
+
+
+
+
+
+
+
+
+
+// Get All Properties 
+exports.getProperties = async (req, res) => {
+    try {
+        const {
+            location,
+            property_type,
+            listing_type,
+            minPrice,
+            maxPrice,
+            bedrooms,
+            sort,
+            page = 1,
+            limit = 5
+        } = req.query;
+
+        const offset = (page - 1) * limit;
+
+        let query = `SELECT * FROM properties WHERE verification_status = 'approved'`;
+        let countQuery = `SELECT COUNT(*) FROM properties WHERE verification_status = 'approved'`;
+
+        let values = [];
+        let countValues = [];
+        let index = 1;
+
+
+        // Filtering Logic
+        if (location) {
+            query += ` AND location ILIKE $${index}`;
+            countQuery += ` AND location ILIKE $${index}`;
+            values.push(`%${location}%`);
+            countValues.push(`%${location}%`);
+            index++;
+        }
+
+        if (property_type) {
+            query += ` AND property_type ILIKE $${index}`;
+            countQuery += ` AND property_type ILIKE $${index}`;
+            values.push(property_type);
+            countValues.push(property_type);
+            index++;
+        }
+
+        if (listing_type) {
+            query += ` AND listing_type ILIKE $${index}`;
+            countQuery += ` AND listing_type ILIKE $${index}`;
+            values.push(listing_type);
+            countValues.push(listing_type);
+            index++;
+        }
+
+        if (minPrice && !isNaN(minPrice)) {
+            query += ` AND price >= $${index}`;
+            countQuery += ` AND price >= $${index}`;
+            values.push(Number(minPrice));
+            countValues.push(minPrice);
+            index++;
+        }
+
+        if (maxPrice && !isNaN(maxPrice)) {
+            query += ` AND price <= $${index}`;
+            countQuery += ` AND price <= $${index}`;
+            values.push(Number(maxPrice));
+            countValues.push(maxPrice);
+            index++;
+        }
+
+        if (bedrooms !== undefined) {
+            query += ` AND bedrooms >= $${index}`;
+            countQuery += ` AND bedrooms >= $${index}`;
+            values.push(Number(bedrooms));
+            countValues.push(Number(bedrooms));
+            index++;
+        }
+
+        console.log("Final Query:", query);
+        console.log("Values:", values); 
+
+        //Sorting Logic
+        if (sort === "price_low") {
+            query += ` ORDER BY price ASC`;
+        } else if (sort === "price_high") {
+            query += ` ORDER BY price DESC`;
+        } else {
+            query += ` ORDER BY created_at DESC`; // default sorting (newest)
+        }
+
+        // Add Pagination
+        query += ` LIMIT $${index} OFFSET $${index + 1}`;
+        values.push(limit, offset);
+
+        // Get Total count
+        const totalResult = await pool.query(countQuery, countValues);
+        const total = parseInt(totalResult.rows[0].count);
+
+        const toatPages = Math.ceil(total / limit);
+
+        //Get filtered properties 
+        const propertiesResult = await pool.query(query, values);
+
+        res.status(200).json({
+            total,
+            page: parseInt(page),
+            limit: parseInt(limit),
+            toatPages,
+            data: propertiesResult.rows
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+
+
+
+//Add Images
+exports.addPropertyImage = async (req, res) => {
+    try{
+
+        const propertyId = req.params.id;
+        const { image_url } = req.body;
+
+        const property = await pool.query(
+            "SELECT * FROM properties WHERE id=$1",
+            [propertyId]
+        );
+
+        if (property.rows.length === 0) {
+            return res.status(404).json({
+                message: "Property not found"
+            });
+        }
+
+        const newImage = await pool.query(
+            `INSERT INTO property_images (propert_id, image_url)
+            VALUES ($1,$2)
+            RETURNING *`,
+            [propertyId, image_url]
+        );
+
+        res.status(201).json({
+            message: "Image added successfully",
+            image: newImage.rows[0]
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Server error"
+        });
+    }
+};
+
+
+exports.getPropertyImages = async (req, res) => {
+    try {
+
+        const propertyId = req.params.id;
+
+        const images = await pool.query(
+            "SELECT * FROM property_images WHERE property_id=$1",
+            [propertyId]
+        );
+
+        res.json(images.rows);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Server error"
+        });
+    }
+};
+
+
+
+
+// Report Property Function
+exports.reportProperty = async (req, res) => {
+    try {
+         
+        const propertyId = req.params.id;
+        const reportedBy = req.user.id;
+
+        const { reason, description } = req.body;
+
+        const report = await pool.query(
+            ` INSERT INTO reports (property_id, reported_by, reason, description)
+            VALUES ($1,$2,$3,$4)
+            RETURNING *`,
+            [propertyId, reportedBy, reason, description]
+        );
+
+        res.status(201).json({
+            message: "Property reported successfully",
+            report: report.rows[0]
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Server error"
+        });
+    }
+};
+
+
+
+// Agent Dashboard
+exports.getAgentProperties = async (req, res) => {
+
+    try {
+        const page = Number(req.query.page) || 1;
+        const limit = Number(req.query.limit) || 5;
+        const offset = (page - 1) * limit;
+
+        const agentId = req.user.id;
+
+        const query = `
+        SELECT * FROM properties
+        WHERE user_id = $1
+        ORDER BY created_at DESC 
+        LIMIT $2 OFFSET $3
+        `;
+
+        const countQuery = `
+        SELECT COUNT(*) FROM properties
+        WHERE user_id = $1
+        `;
+
+        const properties = await pool.query(query, [agentId, limit, offset]);
+        const total = await pool.query(countQuery, [agentId]);
+
+        const totalProperties = Number(total.rows[0].count);
+        const totalPages = Math.ceil(totalProperties / limit);
+
+        res.json({
+            total: totalProperties,
+            page,
+            limit,
+            totalPages,
+            data: properties.rows
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+// Get Agent Dashboard
+exports.getAgentDashboardStats = async (req, res) => {
+    
+    try {
+        const agentId = req.user.id;
+
+        const total = await pool.query(
+            "SELECT COUNT(*) FROM properties WHERE user_id = $1",
+            [agentId]
+        );
+
+        const approved = await pool.query(
+            "SELECT COUNT(*) FROM properties WHERE user_id = $1 AND verification_status = 'approved'",
+            [agentId]
+        );
+
+        const pending = await pool.query(
+            "SELECT COUNT(*) FROM properties WHERE user_id = $1 AND verification_status = 'pending'",
+            [agentId]
+        );
+
+        const rejected = await pool.query(
+            "SELECT COUNT(*) FROM properties WHERE user_id = $1 AND verification_status = 'rejected'",
+            [agentId]
+        );
+
+        res.json({
+            total_properties: total.rows[0].count,
+            approved: approved.rows[0].count,
+            pending: pending.rows[0].count,
+            rejected: rejected.rows[0].count
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+
+
+MY searchRoutes
+const router = require("express").Router();
+
+const searchController = require("../controllers/searchController");
+const { verifyToken } = require("../middleware/authMiddleware");
+
+router.post("/save", verifyToken, searchController.saveSearch);
+router.get("/saved", verifyToken, searchController.getSavedSearches);
+router.delete("/:id", verifyToken, searchController.deleteSavedSearch);
+
+module.exports = router;
+
+
+
+
+
+
+MY searchController
+const pool = require("../config/db");
+
+//Save Search
+exports.saveSearch = async (req, res) => {
+    try{
+
+        const userId = req.user.id;
+
+        const {
+            location,
+            property_type,
+            listing_type,
+            min_price,
+            max_price,
+            bedrooms
+        } = req.body;
+
+        const result = await pool.query(
+            `INSERT INTO saved_searches
+            (user_id, location, property_type, listing_type, min_price, max_price, bedrooms)
+            VALUES ($1,$2,$3,$4,$5,$6,$7)
+            RETURNING *`,
+            [userId, location, property_type, listing_type, min_price, max_price, bedrooms]
+        );
+
+        res.status(201).json({
+            message: "Search saved successfully",
+            search: result.rows[0]
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+// Get Saved Searches
+exports.getSavedSearches = async (req, res) => {
+    try {
+
+        const searches = await pool.query(
+            "SELECT * FROM saved_searches WHERE user_id=$1 ORDER BY created_at DESC",
+            [userId]
+        );
+
+        res.json(searches.rows);
+
+    } catch(error){
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+// Delete Saved Search
+exports.deleteSavedSearch = async (req, res) => {
+    try{
+
+        const searchId = req.params.id;
+        const userId = req.user.id;
+
+        await pool.query(
+            "DELETE FROM saved_searches WHERE id=$1 AND user_id=$2",
+            [searchId,userId]
+        );
+
+        res.json({
+            message: "Saved search deleted"
+        });
+
+    } catch(error){
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+
+MY authMiddle
+const jwt = require("jsonwebtoken");
+
+const verifyToken = (req, res, next) => {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader) {
+        return res.status(401).json({ message: "Access denied. No token provided." });
+    }
+
+    const token = authHeader.split(" ")[1];
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        req.user = decoded;  //THIS IS CRUCIAL
+        next();
+    } catch (error)  {
+        res.status(401).json({ message: "Invalid token" });
+    }
+};
+
+module.exports = { verifyToken };
+
+
+
+
+
+
+MY server
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+require("./config/db");
+
+const propertyRoutes = require("./routes/propertyRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+const searchRoutes = require("./routes/searchRoutes");
+
+const authRoutes = require('./routes/authRoutes');
+
+
+const app = express();
+const PORT = 5000;
+
+//Middlewares
+app.use(cors());
+app.use(express.json());
+
+//Routes
+app.use("/api/properties", propertyRoutes);
+
+app.use("/api/admin", adminRoutes);
+
+app.use('/api/auth', authRoutes);
+
+app.use("/api/favorites", require("./routes/favorites"));
+
+app.use("/api/search", searchRoutes);
+
+app.get("/", (req, res) => {
+    res.send("Africa PropTech API is running");
+});
+
+//Start server
+app.listen(PORT, () => {
+    console.log(`The Server is running on port ${PORT}`);
+});
+
+
+
+
+
+// Add new property
+exports.createProperty = async (req, res) => {
+    try { 
+
+        const {
+            title,
+            description,
+            price,
+            location,
+            property_type,
+            listing_type,
+            bedrooms,
+            bathrooms,
+            area_sqft,
+            image_url
+        } = req.body;
+
+        const userId = req.user.id;
+
+        const newProperty = await pool.query(
+            `INSERT INTO properties
+            (title, description, price, location, property_type, listing_type, bedrooms, bathrooms, area_sqft, image_url, user_id, verification_status)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,'pending')
+            RETURNING *`,
+            [
+                title,
+                description,
+                price,
+                location,
+                property_type,
+                listing_type,
+                bedrooms,
+                bathrooms,
+                area_sqft,
+                image_url,
+                req.user.id
+            ]
+        );
+
+        const alertService = require("../services/alertService");
+
+        res.status(201).json(newProperty.rows[0]);
+
+        await alertService.checkSavedSearchMatches(newProperty.rows[0]);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+
+// Add Trending for HomePage
+exports.getHomepageProperties = async (req, res) => {
+    try {
+
+        const trending = await pool.query(
+            `
+            SELECT properties.*,
+            COUNT(DISTINCT favorites.id) AS favorite_count,
+            COUNT(DISTINCT reviews.id) AS review_count
+            FROM properties
+            LEFT JOIN favorites
+            ON properties.id = favorites.property_id
+            LEFT JOIN reviews
+            ON properties.id = reviews.property_id
+            WHERE verification_status = 'approved'
+            GROUP BY properties.id
+            ORDER BY (views + COUNT(DISTINCT favorites.id)*2 + COUNT(DISTINCT reviews.id)*3) DESC
+            LIMIT 10
+            `
+        );
+
+        const newest = await pool.query(
+            `
+            SELECT *
+            FROM properties
+            WHERE verification_status='approved'
+            ORDER BY created_at DESC
+            LIMIT 10
+            `
+        );
+
+        res.json({
+            trending: trending.rows,
+            newest: newest.rows
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+
+MY propertyRoutes
+const express = require("express");
+const router = express.Router();
+const propertyController = require("../controllers/propertyController");
+
+const { verifyToken } = require("../middleware/authMiddleware");
+const authorizeRoles = require("../middleware/roleMiddleware");
+
+// Agent + Admin can create 
+router.post(
+    "/",
+    verifyToken,
+    authorizeRoles("admin", "agent"),
+    propertyController.createProperty
+);
+
+// Only Admin can delete all properties BUT agent can delete only his own property
+router.delete(
+    "/:id",
+    verifyToken,
+    authorizeRoles("admin"),
+    propertyController.deleteProperty
+);
+
+// Public routes
+router.get("/homepage", propertyController.getHomepageProperties);
+router.get("/", propertyController.getProperties);
+router.get("/:id", propertyController.getPropertyById);
+
+// Update (Agent + Admin)
+router.put(
+    "/:id",
+    verifyToken,
+    authorizeRoles("admin", "agent"),
+    propertyController.updateProperty
+);
+
+
+// Agent Route
+router.get(
+    "/agent/properties",
+    verifyToken,
+    propertyController.getAgentProperties
+);
+
+router.get(
+    "/agent/dashboard",
+    verifyToken,
+    propertyController.getAgentDashboardStats
+);
+
+router.post(
+    "/:id/report",
+    verifyToken,
+    propertyController.reportProperty
+);
+
+router.post(
+    "/:id/images",
+    verifyToken,
+    authorizeRoles("admin", "agent"),
+    propertyController.addPropertyImage
+);
+
+router.get(
+    "/:id/images",
+    propertyController.getPropertyImages
+);
+
+
+console.log("Property routes loaded");
+
+module.exports = router;
+
+
+
+
+
+
+
+// Add Trending for HomePage
+exports.getHomepageProperties = async (req, res) => {
+    try {
+
+        const featured = await pool.query(
+            `
+            SELECT p.*
+            FROM properties p
+            JOIN featured_properties f ON p.id = f.property_id
+            WHERE f.payment_status = 'paid'
+            AND f.end_date > NOW()
+            ORDER BY f.id DESC
+            LIMIT 10
+            `
+        );
+
+        const trending = await pool.query(
+            `
+            SELECT
+            p.*,
+            COALESCE(f.favorite_count,0) AS favorite_count,
+            COALESCE(r.review_count,0) AS review_count
+            FROM properties p
+            LEFT JOIN (
+            SELECT property_id, COUNT(*) AS favorite_count
+            FROM favorites
+            GROUP BY property_id
+            ) f ON p.id = f.property_id
+             
+            LEFT JOIN (
+            SELECT property_id, COUNT(*) AS review_count
+            FROM reviews
+            GROUP BY property_id
+            ) r ON p.id = r.property_id
+             WHERE p.verification_status = 'approved'
+             ORDER BY (p.views + COALESCE(f.favorite_count,0)*2 + COALESCE(r.review_count,0)*3) DESC
+             
+             LIMIT 10
+             `
+        );
+
+        const newest = await pool.query(
+            `
+            SELECT *
+            FROM properties
+            WHERE verification_status='approved'
+            ORDER BY created_at DESC
+            LIMIT 10
+            `
+        );
+
+        res.json({
+            featured: featured.rows,
+            trending: trending.rows,
+            newest: newest.rows
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+//Featured/Sponsored properties
+exports.featureProperty = async (req, res) => {
+    try {
+
+        const propertyId = req.params.id;
+        const userId = req.user.id;
+        const { duration } = req.body;
+
+        //Validate duration
+        if (!FEATURE_PRICING[duration]) {
+            return res.status(400).json({ message: "Invalid duration" });
+        }
+
+        const price = FEATURE_PRICING[duration];
+
+        //Check if property belongs to agent
+        const property = await pool.query(
+            "SELECT * FROM properties WHERE id = $1 AND user_id = $2",
+            [propertyId, userId]
+        );
+
+        if (property.rows.length === 0) {
+            return res.status(403).json({ message: "Not authorized" });
+        }
+
+        // Create FEATURE REQUEST (pending payment)
+        const result = await pool.query(
+            `INSERT INTO featured_properties
+            (property_id, user_id, duration_days, price, end_date, payment_status)
+            VALUES ($1, $2, $3, $4, NOW() + ($3 || 'days')::INTERVAL, 'pending')
+            RETURNING *`,
+            [propertyId, userId, duration, price]
+        );
+
+        res.json({
+            message: "Feature request created. Proceed to payment.",
+            data: result.rows[0]
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+//Payment
+exports.payForFeature = async (req, res) => {
+    try {
+        const featureId = req.params.id;
+        const userId = req.user.id;
+
+        const feature = await pool.query(
+            "SELECT * FROM featured_properties WHERE id = $1 AND user_id = $2",
+            [featureId, userId]
+        );
+
+        if (feature.rows.length === 0) {
+            return res.status(404).json({ message: "Feature request not found" });
+        }
+
+        //Mark as paid
+        await pool.query(
+            "UPDATE featured_properties SET payment_status = 'paid' WHERE id = $1",
+            [featureId]
+        );
+
+        res.json({ message: "Payment successful. Property is now featured." });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+// Add Trending for HomePage
+exports.getHomepageProperties = async (req, res) => {
+    try {
+
+        const featured = await pool.query(
+            `
+            SELECT p.*
+            FROM properties p
+            JOIN featured_properties f ON p.id = f.property_id
+            WHERE f.payment_status = 'paid'
+            AND f.end_date > NOW()
+            ORDER BY f.id DESC
+            LIMIT 10
+            `
+        );
+
+        const trending = await pool.query(
+            `
+            SELECT
+            p.*,
+            COALESCE(f.favorite_count,0) AS favorite_count,
+            COALESCE(r.review_count,0) AS review_count
+            FROM properties p
+            LEFT JOIN (
+            SELECT property_id, COUNT(*) AS favorite_count
+            FROM favorites
+            GROUP BY property_id
+            ) f ON p.id = f.property_id
+             
+            LEFT JOIN (
+            SELECT property_id, COUNT(*) AS review_count
+            FROM reviews
+            GROUP BY property_id
+            ) r ON p.id = r.property_id
+             WHERE p.verification_status = 'approved'
+             ORDER BY (p.views + COALESCE(f.favorite_count,0)*2 + COALESCE(r.review_count,0)*3) DESC
+             
+             LIMIT 10
+             `
+        );
+
+        const newest = await pool.query(
+            `
+            SELECT *
+            FROM properties
+            WHERE verification_status='approved'
+            ORDER BY created_at DESC
+            LIMIT 10
+            `
+        );
+
+        res.json({
+            featured: featured.rows,
+            trending: trending.rows,
+            newest: newest.rows
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+//Featured/Sponsored properties
+exports.featureProperty = async (req, res) => {
+    try {
+
+        const propertyId = req.params.id;
+        const userId = req.user.id;
+        const { duration } = req.body;
+
+        //Validate duration
+        if (!FEATURE_PRICING[duration]) {
+            return res.status(400).json({ message: "Invalid duration" });
+        }
+
+        const price = FEATURE_PRICING[duration];
+
+        //Check if property belongs to agent
+        const property = await pool.query(
+            "SELECT * FROM properties WHERE id = $1 AND user_id = $2",
+            [propertyId, userId]
+        );
+
+        if (property.rows.length === 0) {
+            return res.status(403).json({ message: "Not authorized" });
+        }
+
+        // Create FEATURE REQUEST (pending payment)
+        const result = await pool.query(
+            `INSERT INTO featured_properties
+            (property_id, user_id, duration_days, price, end_date, payment_status)
+            VALUES ($1, $2, $3, $4, NOW() + ($3 || 'days')::INTERVAL, 'pending')
+            RETURNING *`,
+            [propertyId, userId, duration, price]
+        );
+
+        res.json({
+            message: "Feature request created. Proceed to payment.",
+            data: result.rows[0]
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+//Payment
+exports.payForFeature = async (req, res) => {
+    try {
+        const featureId = req.params.id;
+        const userId = req.user.id;
+
+        const feature = await pool.query(
+            "SELECT * FROM featured_properties WHERE id = $1 AND user_id = $2",
+            [featureId, userId]
+        );
+
+        if (feature.rows.length === 0) {
+            return res.status(404).json({ message: "Feature request not found" });
+        }
+
+        //Mark as paid
+        await pool.query(
+            "UPDATE featured_properties SET payment_status = 'paid' WHERE id = $1",
+            [featureId]
+        );
+
+        res.json({ message: "Payment successful. Property is now featured." });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+
+console.log("logged in user:", userId);
+console.log("Booking user:", booking.rows[0]?.user_id);
+
+
+
+
+
+
+
+
+
+
+MY MESSAGE CONTROLLER
+const pool = require("../config/db");
+
+//Send Message
+exports.sendMessage = async (req, res) => {
+    try {
+
+        const senderId = req.user.id;
+        const { receiver_id, property_id, message } = req.body;
+
+
+        //Conversation
+        let conversation = await pool.query(
+            `SELECT * FROM conversations
+            WHERE (user_one=$1 AND user_two=$2)
+            OR (user_one=$2 AND user_two=$1)`,
+            [senderId, receiver_id]
+        );
+
+        if (conversation.rows.length === 0) {
+            conversation = await pool.query(
+                `INSERT INTO conversations (user_one, user_two)
+                VALUES ($1,$2)
+                RETURNING *`,
+                [senderId, receiver_id]
+            );
+        }
+
+        const conversationId = conversation.rows[0].id;
+
+        const result = await pool.query(
+            `INSERT INTO messages (sender_id, receiver_id, property_id, message, conversation_id)
+            VALUES ($1,$2,$3,$4,$5)
+            RETURNING *`,
+            [senderId, receiver_id, property_id, message, conversationId]
+        );
+
+        
+
+        const newMessage = result.rows[0]; 
+        
+        //Real-time message
+        if (global.io) {
+            global.io.to(`user_${receiver_id}`).emit("new_message", newMessage);
+        }
+
+        // Creat notification 
+        const notificationService = require("../services/notificationService");
+
+        await notificationService.createNotification({
+            userId: receiver_id,
+            message: "You received a new message",
+            type: "message",
+            referenceId: newMessage.id
+        });
+
+        res.status(201).json(newMessage);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+//Get User Conversations
+exports.getUserConversations = async (req, res) => {
+    try{
+        const userId = req.user.id;
+
+        const result = await pool.query(
+            `SELECT c.*,
+            u1.name as user_one_name,
+            u2.name as user_two_name
+            FROM conversations c
+            JOIN users u1 ON c.user_one = u1.id
+            JOIN users u2 ON c.user_two = u2.id
+            WHERE c.user_one=$1 OR c.user_two=$1
+            ORDER BY c.created_at DESC`,
+            [userId]
+        );
+
+        res.json(result.rows);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+//Messages by conversations
+exports.getMessagesByConversation = async (req, res) => {
+    try {
+        const { conversationId } = req.params;
+
+        const result = await pool.query(
+            `SELECT * FROM messages
+            WHERE conversation_id=$1
+            ORDER BY created_at ASC`,
+            [conversationId]
+        );
+
+        res.json(result.rows);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+// Get conversation between two users
+exports.getConversation = async (req, res) => {
+    try {
+
+        const userId = req.user.id;
+        const otherUserId = req.params.userId;
+
+        const messages = await pool.query(
+            `SELECT * FROM messages
+            WHERE
+            (sender_id = $1 AND receiver_id = $2)
+            OR
+            (sender_id = $2 AND receiver_id = $1)
+            ORDER BY created_at ASC`,
+            [userId, otherUserId]
+        );
+
+        res.json(messages.rows);
+
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+//Get all messages for a user
+exports.getUserMessages = async (req, res) => {
+    try {
+
+        const userId = req.user.id;
+
+        const messages = await pool.query(
+            `SELECT * FROM messages
+            WHERE sender_id=$1 OR receiver_id=$1
+            ORDER BY created_at DESC`,
+            [userId]
+        );
+
+        res.json(messages.rows);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+exports.markMessageSeen = async (req, res) => {
+    try {
+        const { messageId } = req.body;
+
+        await pool.query(
+            "UPDATE messages SET is_seen = true WHERE id=$1",
+            [messageId]
+        );
+
+        // notify sender
+        if (global.io) {
+            global.io.emit("message_seen", { messageId });
+        }
+
+        res.json({ message: "Message marked as seen" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+
+
+
+MY socketTest NOW
+const { io } = require("socket.io-client");
+
+//Get user from terminal
+const userId = process.argv[2];
+
+if (!userId) {
+    console.log("Please provide userId");
+    process.exit();
+}
+
+const socket = io("http://localhost:5000");
+
+socket.on("connect", () => {
+    console.log(`Connected as User ${userId}:`, socket.id);
+
+    socket.emit("join", userId);
+});
+
+socket.on("notification", (data) => {
+    console.log(`User ${userId} got notification:`, data);
+});
+
+socket.on("new_message", (data) => {
+    console.log(`User ${userId} got message:`, data);
+});
+
+socket.on("typing", (data) => {
+    console.log(`User ${data.senderId} is typing...`);
+});
+
+socket.on("online_users", (users) => {
+    console.log("Online users:", users);
+});
+
+socket.on("message_seen", (data) => {
+    console.log("Message seen", data);
+});
+
+
+
+
+
+
+My server.js
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+require("./config/db");
+
+
+//NEW (Socket)
+const http = require("http");
+const { Server } = require("socket.io");
+
+
+const propertyRoutes = require("./routes/propertyRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+const searchRoutes = require("./routes/searchRoutes");
+const messageRoutes = require("./routes/messageRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
+const userRoutes = require("./routes/userRoutes");
+const agentRoutes = require("./routes/agentRoutes");
+
+const authRoutes = require('./routes/authRoutes');
+
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+//HTTP SERVER 
+const server = http.createServer(app);
+
+
+const onlineUsers = new Map();
+
+
+//SOCKET SETUP
+const io = new Server(server, {
+    cors: {
+        origin: "*"
+    }
+});
+
+//Make io accessible everywhere
+global.io = io;
+
+//Socket connection 
+io.on("connection", (socket) => {
+    console.log("User connected:", socket.id);
+
+    socket.on("join", (userId) => {
+        socket.join(`user_${userId}`);
+        console.log(`User ${userId} joined room`);
+
+        onlineUsers.set(userId, socket.id);
+
+         //Broadcast online users
+        io.emit("online_users", Array.from(onlineUsers.keys()));
+    });
+
+    socket.on("disconnect", () => {
+        console.log("User disconnected");
+        for(let [userId, socketId] of onlineUsers.entries()) {
+            if (socketId === socket.id) {
+                onlineUsers.delete(userId);
+                break;
+            }
+        }
+
+        io.emit("online_users", Array.from(onlineUsers.keys()));
+    });
+
+
+    //Typing Indicator
+    socket.on("typing", ({ senderId, receiverId }) => {
+    socket.to(`user_${receiverId}`).emit("typing", { senderId });
+});
+
+});
+
+
+//Middlewares
+app.use(cors());
+app.use(express.json());
+
+//Routes
+app.use("/api/properties", propertyRoutes);
+
+app.use("/api/admin", adminRoutes);
+
+app.use('/api/auth', authRoutes);
+
+app.use("/api/favorites", require("./routes/favorites"));
+
+app.use("/api/search", searchRoutes);
+
+app.use("/api/messages", messageRoutes);
+
+app.use("/api/notifications", notificationRoutes);
+
+app.use("/api/reviews", reviewRoutes);
+
+app.use("/api/users", userRoutes);
+
+app.use("/api/agents", agentRoutes);
+
+
+//Test Route
+app.get("/", (req, res) => {
+    res.send("Africa PropTech API is running");
+});
+
+//Start server
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

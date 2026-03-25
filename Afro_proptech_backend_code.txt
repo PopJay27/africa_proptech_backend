@@ -1,0 +1,828 @@
+🟢 STEP 1: Create Project Folder
+Create a new folder anywhere:
+Name it:
+africa-proptech-backend
+Open that folder in VS Code.
+
+
+Initialize Node Project
+Open terminal inside VS Code:
+
+Run:
+npm init -y    ~
+
+This creates package.json.
+
+Now install core packages:
+npm install express cors dotenv  ~
+
+
+🟢 STEP 3: Create Server File
+
+Inside your folder:
+Create a file named:
+
+server.js
+Inside it, type this manually (do NOT copy blindly — type it):
+
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+const PORT = 5000;
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Africa PropTech API is running 🚀");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
+
+Run Your Server
+In terminal:
+
+node server.js    ~
+
+You should see:
+Server running on port 5000
+
+
+
+Now open browser:
+Go to:
+http://localhost:5000
+
+If you see:
+Africa PropTech API is running 🚀
+
+You just wrote your first backend server.
+What You Just Did
+You:
+Created an HTTP server
+Defined a route
+Sent a response
+Started listening on a port
+That is backend.
+
+
+
+THIS IS A DEBUG LINE 
+🔧 What’s Happening
+
+Windows PowerShell restricts script execution by default.
+npm uses a PowerShell script (npm.ps1).
+Your system is blocking it for security reasons.
+We just need to allow local scripts.
+
+✅ FIX (Safe Method)
+Inside VS Code terminal (PowerShell), run this command:
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned    ~
+
+It will ask:
+Do you want to change execution policy?
+Type:
+Y    ~
+Then press Enter.
+
+
+
+
+Install Required Packages
+In your terminal, run:
+
+npm install express cors   ~
+
+Wait for it to finish.
+You should see:
+
+node_modules folder created
+
+package-lock.json created
+
+
+
+Run the Server Again
+Now run:
+
+node server.js   ~~
+
+If successful, you should see:
+Server running on port 5000
+
+
+
+🧠 What’s Happening Technically
+express creates the server
+app.listen() starts the server
+console.log runs ONLY if server successfully starts
+Browser only shows res.send()
+Console message appears in terminal only
+
+
+
+Now pause for a second and understand what just happened.
+When you ran:
+
+node server.js   ~
+
+You literally started the backend engine of Africa PropTech.
+You now have a live API running on:
+
+http://localhost:5000
+
+That is the foundation of:
+• Rentals
+• Land verification
+• Property listings
+• Hotel bookings
+• Payments
+• Africa expansion
+Everything will plug into this engine.
+
+
+
+
+Create Proper Backend Structure
+Inside your Africa-proptech-backend folder, create these folders:
+
+config
+controllers
+routes
+models
+middleware
+
+
+🧠 What Each Folder Will Do
+
+📁 config
+Database connection config goes here.
+
+📁 controllers
+Business logic.
+Example:
+createProperty
+verifyLand
+bookRental
+Controllers talk to database.
+
+📁 routes
+Defines API endpoints.
+Example:
+/properties
+/rentals
+/land/verify
+Routes call controllers.
+
+📁 models
+Database query logic.
+Handles PostgreSQL interactions.
+
+📁 middleware
+Authentication, admin checks, validation, etc.
+
+
+
+
+Clean server.js
+
+Right now everything is inside server.js.
+We’ll refactor it.
+Replace your entire server.js with this:
+
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+const PORT = 5000;
+
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// Routes
+const propertyRoutes = require("./routes/propertyRoutes");
+app.use("/api/properties", propertyRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Africa PropTech API is running");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
+
+Create Your First Route File
+Inside routes folder:
+Create file:
+
+propertyRoutes.js
+
+Add this inside it:
+
+const express = require("express");
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  res.json({
+    message: "All properties route working",
+  });
+});
+
+module.exports = router;
+
+Save it.
+
+
+
+Test It
+Run:
+
+node server.js    ~~
+
+Now go to browser:
+http://localhost:5000/api/properties
+
+You should see:
+{
+  "message": "All properties route working"
+}
+
+
+
+🎯 Why This Matters
+Now:
+server.js = app entry point
+routes = endpoints
+controllers = logic (next step)
+models = database layer
+config = db config
+This is scalable architecture.
+
+
+
+When you change files, you must stop and restart the server.
+In terminal:
+Press:
+
+Ctrl + C    ~~
+
+Then run again:
+
+node server.js   ~~
+
+
+
+
+
+
+✅ Clean Correct Version (Use This)
+
+Replace your entire server.js with this:
+
+const express = require("express");
+const cors = require("cors");
+
+const propertyRoutes = require("./routes/propertyRoutes");
+
+const app = express();
+const PORT = 5000;
+
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// Routes
+app.use("/api/properties", propertyRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Africa PropTech API is running");
+});
+
+app.get("/test", (req, res) => {
+  res.send("Test route working");
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
+🔥 Now Do This
+
+Save
+Stop server (Ctrl + C)
+
+Run again:
+node server.js   ~
+
+Test:
+http://localhost:5000/test
+
+Then:
+http://localhost:5000/api/properties
+
+🎯 What We Just Fixed
+Removed unnecessary require
+Cleaned route structure
+Ensured proper server flow
+
+You’re actually doing well.
+You’re now moving from “following steps” to “understanding structure.”
+
+
+
+
+
+Install Nodemon
+In your project root:
+
+npm install nodemon --save-dev    ~~
+
+Wait for it to install.
+
+Step 2 — Update package.json
+Open package.json.
+
+Find:
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+
+Replace it with:
+
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+}
+
+Save it.
+
+
+
+
+Run Dev Mode
+
+Now instead of:
+
+node server.js   ~
+
+You run:
+
+npm run dev   ~
+
+You should see:
+[nodemon] starting `node server.js`
+Server running on port 5000
+
+
+
+Now Test It
+Change something small in server.js.
+
+Example:
+Change:
+
+res.send("Test route working");   ~
+
+To:
+
+res.send("Auto restart working 🔥");    ~
+
+Save the file.
+Watch the terminal.
+It should automatically restart.
+No more Ctrl + C.
+No more manual restart.
+
+
+
+
+
+THIS IS NODEMON DEBUG
+🔎 What Just Happened?
+
+You said:
+
+Changing file ❌ didn’t restart
+Typing rs ✅ restarted
+After rs, browser updated correctly
+
+That tells me one thing very clearly:
+Nodemon is running
+But it is NOT detecting file changes automatically.
+
+So this is not Express.
+Not your routes.
+Not your code.
+
+This is a Windows file-watching issue.
+Very common.
+Very fixable.
+
+🛠 Why This Happens (Windows Specific)
+On Windows, sometimes nodemon doesn’t properly detect file changes because of how file watching works.
+
+Especially when:
+
+Using OneDrive folders
+Using certain VS Code save settings
+Using PowerShell
+
+Your path shows:
+C:\Users\HP\Desktop\Africa-proptech-backend
+
+Desktop sometimes syncs with OneDrive.
+That can interfere with watchers.
+
+
+
+✅ The Permanent Fix (Force Legacy Watch Mode)
+We’re going to force nodemon to watch files properly.
+
+Open your package.json.
+Change this:
+
+"dev": "nodemon server.js"     ~
+
+To this:
+"dev": "nodemon --legacy-watch server.js"    ~
+
+Save it.
+Now stop the server:
+Ctrl + C
+
+Then run:
+npm run dev    ~
+
+
+
+IN Package.Json
+change this:
+"main": "index.js",
+
+To:
+
+"main": "server.js",    ~
+
+
+
+
+
+
+Wire PostgreSQL
+This is where your backend becomes real.
+Step 1 — Install pg
+In your project root:
+
+npm install pg   ~
+This is the PostgreSQL driver for Node.
+
+Step 1 — Create Database Config
+Inside your config folder:
+Create file:
+
+db.js
+Put this inside:
+
+const { Pool } = require("pg");
+
+const pool = new Pool({
+  user: "postgres",
+  host: "localhost",
+  database: "africa_proptech",
+  password: "YOUR_POSTGRES_PASSWORD",
+  port: 5432,
+});
+
+pool.connect()
+  .then(() => console.log("🔥 PostgreSQL connected"))
+  .catch(err => console.error("Database connection error:", err));
+
+module.exports = pool;
+
+Replace:
+
+YOUR_POSTGRES_PASSWORD
+
+With your real password.
+
+
+Step 2 — Create The Database
+Open PostgreSQL (pgAdmin or SQL shell).
+
+OPEN: pgAdmin 4
+
+Step 2: Connect to Server
+On the left side you’ll see:
+
+Servers
+Click it.
+It may ask for your PostgreSQL password.
+Enter the password you used when installing PostgreSQL.
+
+Step 3: Create Database
+On the left panel:
+Click:
+Servers
+  → PostgreSQL
+    → Databases
+
+Right-click on Databases
+Click:
+Create → Database
+
+A form will open.
+In the name field, type:
+africa_proptech
+Click Save.
+
+That’s it.
+Database created.
+
+
+
+🎯 After You Create It
+Go back to VS Code.
+Restart your backend:
+
+npm run dev    ~
+
+If everything is correct, you should see:
+🔥 PostgreSQL connected
+in your terminal.
+
+
+
+Import Database In server.js
+Open server.js.
+At the top (after express and cors), add:
+
+require("./config/db");    ~
+
+Like this:
+const express = require("express");
+const cors = require("cors");
+require("./config/db"); // ← ADD THIS
+
+Save the file.
+Restart server:
+npm run dev    ~
+
+
+
+Open Query Tool in pgAdmin
+
+Inside pgAdmin:
+Click your database:
+africa_proptech
+
+Click Query Tool (top toolbar)
+You’ll see a SQL editor.
+
+🧱 Step 2 — Create properties Table
+Paste this:
+
+CREATE TABLE properties (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    price NUMERIC(15,2) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    property_type VARCHAR(100) NOT NULL,
+    listing_type VARCHAR(50) NOT NULL, -- sale or rent
+    bedrooms INTEGER,
+    bathrooms INTEGER,
+    area_sqft INTEGER,
+    image_url TEXT,
+    is_verified BOOLEAN DEFAULT false,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Click ▶ Run.
+
+If successful, it will say:
+Query returned successfully
+
+
+
+🧠 Why This Structure?
+This gives us:
+Sale & rent support
+Land & house support
+Verification system
+Image storage
+Time tracking
+Scalable structure
+This is built for:
+Nigeria first
+Africa next
+
+
+
+Confirm Table Created
+In pgAdmin left panel:
+
+Databases
+  → africa_proptech
+    → Schemas
+      → public
+        → Tables
+
+You should see:
+properties
+
+
+
+
+
+
+
+Create Controller Logic
+Inside:
+controllers
+
+Create file:
+propertyController.js
+Add this:
+
+const pool = require("../config/db");
+
+// Add new property
+exports.createProperty = async (req, res) => {
+  try {
+    const {
+      title,
+      description,
+      price,
+      location,
+      property_type,
+      listing_type,
+      bedrooms,
+      bathrooms,
+      area_sqft,
+      image_url
+    } = req.body;
+
+    const newProperty = await pool.query(
+      `INSERT INTO properties 
+      (title, description, price, location, property_type, listing_type, bedrooms, bathrooms, area_sqft, image_url) 
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) 
+      RETURNING *`,
+      [title, description, price, location, property_type, listing_type, bedrooms, bathrooms, area_sqft, image_url]
+    );
+
+    res.status(201).json(newProperty.rows[0]);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+// Get all properties
+exports.getProperties = async (req, res) => {
+  try {
+    const properties = await pool.query("SELECT * FROM properties ORDER BY created_at DESC");
+    res.json(properties.rows);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+Save it.
+
+
+
+
+🧠 Step 2 — Connect Controller To Routes
+
+Open:
+routes/propertyRoutes.js
+Replace its content with:
+
+const express = require("express");
+const router = express.Router();
+const propertyController = require("../controllers/propertyController");
+
+router.post("/", propertyController.createProperty);
+router.get("/", propertyController.getProperties);
+
+module.exports = router;
+
+Save.
+
+Restart Server
+npm run dev
+
+
+
+
+
+
+Test With Thunder Client
+
+Open Thunder Client in VS Code.
+Create a POST request:
+
+http://localhost:5000/api/properties
+
+Set Body → JSON
+Paste this:
+
+{
+  "title": "Luxury 4 Bedroom Duplex",
+  "description": "Located in Lekki Phase 1",
+  "price": 250000000,
+  "location": "Lagos",
+  "property_type": "House",
+  "listing_type": "Sale",
+  "bedrooms": 4,
+  "bathrooms": 5,
+  "area_sqft": 3500,
+  "image_url": "https://example.com/image.jpg"
+}
+
+Hit Send.
+
+If everything works…
+
+You will see the inserted property returned.
+
+Then test:
+
+GET request:
+
+http://localhost:5000/api/properties
+
+And you should see your property.
+
+
+
+
+You just:
+Designed a database
+Connected PostgreSQL to Node
+Built controllers
+Created routes
+Inserted data via API
+Retrieved it successfully
+That is a real backend system.
+
+
+
+
+🚀 Next Step: Get Single Property by ID
+
+Inside propertyController.js, add:
+
+// Get single property
+exports.getPropertyById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const property = await pool.query(
+      "SELECT * FROM properties WHERE id = $1",
+      [id]
+    );
+
+    if (property.rows.length === 0) {
+      return res.status(404).json({ message: "Property not found" });
+    }
+
+    res.json(property.rows[0]);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+🧱 Then Update Your Routes
+Inside propertyRoutes.js add:
+
+router.get("/:id", propertyController.getPropertyById);
+
+Make sure it’s BELOW:
+router.get("/", propertyController.getProperties);
+
+🔥 Restart Server
+npm run dev
+🧪 Test in Thunder Client
+
+GET:
+
+http://localhost:5000/api/properties/1
+
+(Replace 1 with the ID returned earlier.)
+
+You should see only that property.
